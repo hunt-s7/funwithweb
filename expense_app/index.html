@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS CALCULATOR</title>
+
+    <style>
+        body{
+            margin-top: 150px;
+            background-color: black;
+            color: rgb(215, 224, 238);
+            text-shadow: 2px 2px #7c7696;
+        }
+        div{
+            margin-bottom: 50px;
+        }
+        
+        .btn{
+            width : 45px;
+            height: 45px;
+            background-color: rgb(215, 224, 238);
+        }
+        #btnequal{
+            width : 102px;
+        }
+        input{
+            height: 40px;
+            background-color:  rgb(215,224,238);
+            
+        }
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            border: 2px solid;
+        }
+        
+        .heading{
+            
+            width: 100%;
+            letter-spacing: 2px;
+            font-size: 2rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="heading">
+            SIMPLE EXPENSE APP WITH VANILLA JS
+    </div>
+    
+    <div>
+
+        <table cellspacing="" cellpadding="5" >
+            <tr>
+                <td colspan="2" style="background-color: rgb(19, 20, 20)">
+                    <h1 id="totalValue"></h1>
+                </td>
+                
+                
+            </tr>
+            
+            <tr>
+                <td><input type="text" id="addValue" ></td>
+                <td>
+                    <button class="btn" id="btnplus">+</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        //display cuurent totalValue
+            //access id='totalValue'
+            let totalValue = 0;
+
+            const el=document.querySelector('#totalValue');
+            //display
+            el.textContent=totalValue;
+
+        //read from input
+            const addValue = document.querySelector('#addValue');
+            
+            function updateplus(){
+                
+                let value=addValue.value;
+                value=parseInt(value);
+                totalValue= totalValue + value; 
+                el.textContent=totalValue;
+            }
+            
+            btnplus.addEventListener('click',updateplus,false);
+            
+            
+        //update totalvalue
+
+    </script>
+
+
+</body>
+</html>
